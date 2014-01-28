@@ -1,5 +1,5 @@
 /**
- * jQuery unBreak v1.0.1
+ * jQuery unBreak v1.0.2
  */
 
 $.fn.unBreak = function(){
@@ -14,8 +14,9 @@ $.fn.unBreak = function(){
 				}
 			},	
 			replaceAt = function(str, index, chr){
-				if(index > str.length-1) return str;
-				    return str.substr(0,index) + chr + str.substr(index+1);
+				if(index > str.length - 1) return str;
+
+				return str.substr(0, index) + chr + str.substr(index + 1);
 			},
 			findChildren = function(el){
 				var children = el.children;
@@ -25,11 +26,9 @@ $.fn.unBreak = function(){
 						var child = el.children[i],
 							children = child.children;
 
-						if(!child.children.length){
-							unBreak(child);
-						} else {
+						!child.children.length ?
+							unBreak(child) :
 							findChildren(child);
-						}
 					}
 				} else {
 					unBreak(el);
