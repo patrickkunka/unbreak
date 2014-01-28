@@ -1,7 +1,7 @@
 UnBreak
 =========
 
-A tiny jQuery plugin for orphan-less responsive text that converts the last space character of targetted text nodes into a non-breaking space character.
+A tiny jQuery plugin for orphan-less responsive typography that converts the last space character of targeted text nodes into a non-breaking space character.
 
 Use as follows: 
 
