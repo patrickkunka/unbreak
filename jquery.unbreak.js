@@ -1,5 +1,7 @@
 /**
+ * @author
  * jQuery unBreak v1.0.2
+ * By Patrick Kunka
  */
 
 $.fn.unBreak = function(){

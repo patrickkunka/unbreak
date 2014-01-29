@@ -12,3 +12,5 @@ Use as follows:
 $('p, h4, h6').unBreak();
 
 ```
+
+For quick operation, select elements by tag name rather than class name, and use sparingly.
