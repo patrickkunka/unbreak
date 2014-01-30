@@ -17,10 +17,10 @@ For quick operation, select elements by tag name rather than class name, and use
 
 **Before**
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/>
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/>
 tempor
 
 **After**
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br/>
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br/>
 eiusmod tempor
