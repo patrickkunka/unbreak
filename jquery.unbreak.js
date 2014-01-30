@@ -8,8 +8,6 @@ $.fn.unBreak = function(){
 	return this.each(function(){
 		var el = this,
 			unBreak = function(el){
-				console.info(el);
-
 				if(el.nodeValue && Array.prototype.indexOf){
 					var html = el.nodeValue,
 						index = html.lastIndexOf(' ');
