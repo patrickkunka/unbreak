@@ -1,6 +1,6 @@
 /**
  * @author
- * jQuery unBreak v1.0.2
+ * jQuery unBreak v1.1.0
  * By Patrick Kunka
  */
 
@@ -8,11 +8,13 @@ $.fn.unBreak = function(){
 	return this.each(function(){
 		var el = this,
 			unBreak = function(el){
-				if(el.innerHTML && Array.prototype.indexOf){
-					var html = el.innerHTML,
+				console.info(el);
+
+				if(el.nodeValue && Array.prototype.indexOf){
+					var html = el.nodeValue,
 						index = html.lastIndexOf(' ');
 
-					el.innerHTML = replaceAt(html, index, '&nbsp;');
+					el.nodeValue = replaceAt(html, index, "\u00A0");
 				}
 			},	
 			replaceAt = function(str, index, chr){
@@ -21,17 +23,12 @@ $.fn.unBreak = function(){
 				return str.substr(0, index) + chr + str.substr(index + 1);
 			},
 			findChildren = function(el){
-				var children = el.children;
+				if(el.childNodes.length){
+					var lastChild = el.childNodes[el.childNodes.length - 1];
 
-				if(children.length){
-					for(var i = 0; i < children.length; i++){
-						var child = el.children[i],
-							children = child.children;
-
-						!child.children.length ?
-							unBreak(child) :
-							findChildren(child);
-					}
+					!lastChild.childNodes.length ?
+						unBreak(lastChild) :
+						findChildren(lastChild);
 				} else {
 					unBreak(el);
 				}
