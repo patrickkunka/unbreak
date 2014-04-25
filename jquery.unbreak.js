@@ -1,18 +1,21 @@
 /**
- * jQuery unBreak v1.1.1
+ * jQuery unBreak v1.2.0
  * 
  * @author	Patrick Kunka
  */
 
-$.fn.unBreak = function(){
+$.fn.unBreak = function(min){
 	return this.each(function(){
 		var el = this,
+			minWords = min || 0;
 			unBreak = function(node){
 				if(node.nodeValue && Array.prototype.indexOf){
 					var value = node.nodeValue,
-						index = value.lastIndexOf('\u0020');
+						space = '\u0020',
+						totalWords = value.split('\u0020').length,
+						index = value.lastIndexOf(space);
 
-					(index > -1) && (node.nodeValue = replaceAt(value, index, "\u00A0"));
+					(index > -1 && totalWords >= minWords) && (node.nodeValue = replaceAt(value, index, "\u00A0"));
 				}
 			},	
 			replaceAt = function(str, index, chr){
