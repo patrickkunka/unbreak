@@ -7,6 +7,16 @@ Use as follows:
 
 ``` javascript
 
+// Basic usage:
+
+new UnBreak(myDomElement);
+
+```
+
+For fast operation, use asyncronously within a native loop, once the DOMContentLoaded event has fired:
+
+``` javascript
+
 // Remove orphans from all h3 elements
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -31,9 +41,6 @@ An optional `data-min` attribute may be added to elements to act as a threshold 
 
 <!-- this element has less than 4 words and therefore will not be affected by unbreak -->
 ```
-
-
-For fast operation, select elements by tag name rather than class name, and use sparingly.
 
 **Before**
 
