@@ -1,7 +1,9 @@
 UnBreak
 =========
 
-A tiny native javascript library for orphan-less responsive typography that converts the last space character of targeted elements into a non-breaking space character.
+A tiny native javascript library for orphan-less responsive typography that converts the last space character of targeted elements into a non-breaking space character. 
+
+NB: This is ideally something that should be done server-side, but in situations where that's not possible, this can be used a lighweight and relatively fast client-side solution.
 
 **Before**
 
