@@ -1,17 +1,37 @@
 UnBreak
 =========
 
-A tiny jQuery plugin for orphan-less responsive typography that converts the last space character of targeted elements into a non-breaking space character.
+A tiny native javascript library for orphan-less responsive typography that converts the last space character of targeted elements into a non-breaking space character.
 
 Use as follows: 
 
 ``` javascript
 
-// Remove orphans from all p, h4 and h6 tags
+// Remove orphans from all h3 elements
 
-$('p, h4, h6').unBreak();
+document.addEventListener('DOMContentLoaded', function(){
+    var headings = document.getElementsByTagName('h3'),
+        applyUnBreak = function(el) {
+            setTimeout(function(){
+                new UnBreak(el);
+            });
+        };
+
+    for (var i = 0, heading; heading = headings[i]; i++) {
+        applyUnBreak(heading);
+    }
+});
 
 ```
+
+An optional `data-min` attribute may be added to elements to act as a threshold under which the unbreak behavior is not applied.
+
+``` html
+<h3 data-min="4">Lorem Ipsum</h3>
+
+<!-- this element has less than 4 words and therefore will not be affected by unbreak -->
+```
+
 
 For fast operation, select elements by tag name rather than class name, and use sparingly.
 
